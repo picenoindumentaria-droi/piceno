@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piceno Indumentaria | Menos ruido más presencia</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Cormorant Garamond for elevated streetwear look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    },
+                    colors: {
+                        dark: '#0a0a0a',
+                        card: '#141414',
+                        bordercolor: '#262626',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom smooth scroll and grain overlay */
+        body {
+            background-color: #0a0a0a;
+            color: #f5f5f5;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .grain-bg {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .glass-card {
+            background: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-btn:hover {
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+        }
+        /* Custom animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.3s; }
+        .delay-300 { animation-delay: 0.5s; }
+    </style>
+</head>
+<body class="grain-bg min-h-screen flex flex-col justify-between selection:bg-white selection:text-black">
+
+    <!-- Navigation Bar -->
+    <header class="w-full py-6 px-6 md:px-12 flex justify-between items-center z-50 border-b border-bordercolor/40 bg-dark/80 backdrop-blur-md sticky top-0">
+        <a href="#" class="flex flex-col items-start tracking-[0.25em] font-serif text-xl md:text-2xl font-bold uppercase hover:opacity-80 transition-opacity">
+            <span>PICENO</span>
+            <span class="text-[9px] tracking-[0.4em] text-neutral-400 font-sans font-light -mt-1">SINCE 2026</span>
+        </a>
+        <div class="flex items-center gap-4">
+            <a href="https://www.instagram.com/piceno.indumentaria/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-bordercolor flex items-center justify-center text-neutral-300 hover:text-white hover:border-white transition-all">
+                <i class="fab fa-instagram text-base"></i>
+            </a>
+            <a href="https://g.page/r/CUSDYN2YraKeEBM/review" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex px-4 py-2 text-xs font-medium uppercase tracking-widest border border-bordercolor rounded-full hover:border-white hover:bg-white hover:text-black transition-all">
+                Dejar Reseña
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="flex-grow flex flex-col items-center justify-center px-6 py-12 md:py-20 text-center max-w-4xl mx-auto">
+        
+        <!-- Logo Badge -->
+        <div class="mb-8 opacity-0 animate-fade-in">
+            <div class="inline-block p-6 md:p-8 rounded-2xl glass-card border border-bordercolor shadow-2xl relative group">
+                <div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent rounded-2xl pointer-events-none"></div>
+                <h1 class="font-serif tracking-[0.3em] text-4xl sm:text-6xl md:text-7xl font-bold text-white uppercase">
+                    PICENO
+                </h1>
+                <div class="w-16 h-[1px] bg-neutral-600 mx-auto my-3"></div>
+                <p class="text-xs sm:text-sm tracking-[0.4em] text-neutral-400 uppercase font-light">
+                    Since 2026
+                </p>
+            </div>
+        </div>
+
+        <!-- Tagline & Description -->
+        <div class="space-y-6 max-w-2xl mx-auto">
+            <h2 class="text-2xl sm:text-4xl md:text-5xl font-light tracking-tight text-white font-serif opacity-0 animate-fade-in delay-100">
+                “Menos ruido <span class="italic font-normal">más presencia.</span>”
+            </h2>
+            <p class="text-neutral-400 text-sm sm:text-base leading-relaxed tracking-wide font-light opacity-0 animate-fade-in delay-200">
+                Streetwear elevado para hombres con carácter y visión propia. Siluetas limpias, cortes precisos y sofisticación urbana sin excesos.
+            </p>
+        </div>
+
+        <!-- Action Buttons Grid -->
+        <div class="mt-10 md:mt-12 w-full max-w-md grid grid-cols-1 sm:grid-cols-2 gap-4 opacity-0 animate-fade-in delay-300">
+            <!-- Instagram Button -->
+            <a href="https://www.instagram.com/piceno.indumentaria/" target="_blank" rel="noopener noreferrer" 
+               class="group relative flex items-center justify-center gap-3 py-4 px-6 rounded-xl bg-white text-black font-medium tracking-wide transition-all duration-300 transform hover:-translate-y-1 glow-btn">
+                <i class="fab fa-instagram text-lg group-hover:scale-110 transition-transform"></i>
+                <span class="text-sm uppercase tracking-wider">Instagram</span>
+                <i class="fas fa-arrow-right text-xs opacity-50 ml-auto group-hover:translate-x-1 transition-transform"></i>
+            </a>
+
+            <!-- Google Reviews Button -->
+            <a href="https://g.page/r/CUSDYN2YraKeEBM/review" target="_blank" rel="noopener noreferrer" 
+               class="group relative flex items-center justify-center gap-3 py-4 px-6 rounded-xl glass-card text-white font-medium tracking-wide border border-bordercolor hover:border-neutral-400 hover:bg-neutral-900 transition-all duration-300 transform hover:-translate-y-1">
+                <div class="flex items-center text-amber-400 text-sm">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star ml-0.5"></i>
+                    <i class="fas fa-star ml-0.5"></i>
+                    <i class="fas fa-star ml-0.5"></i>
+                    <i class="fas fa-star ml-0.5"></i>
+                </div>
+                <span class="text-sm uppercase tracking-wider">Reseña Google</span>
+                <i class="fas fa-external-link-alt text-xs opacity-50 ml-auto"></i>
+            </a>
+        </div>
+
+        <!-- Brand Pillars / Minimalist Features -->
+        <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-3xl text-left">
+            <div class="glass-card p-6 rounded-xl border border-bordercolor/60">
+                <span class="text-xs font-mono text-neutral-500 block mb-2">01 // FILOSOFÍA</span>
+                <h3 class="text-white font-medium text-base mb-1">Streetwear Elevado</h3>
+                <p class="text-neutral-400 text-xs leading-relaxed">Prendas con identidad urbana y acabados de sastrería contemporánea.</p>
+            </div>
+            <div class="glass-card p-6 rounded-xl border border-bordercolor/60">
+                <span class="text-xs font-mono text-neutral-500 block mb-2">02 // DISEÑO</span>
+                <h3 class="text-white font-medium text-base mb-1">Cortes Precisos</h3>
+                <p class="text-neutral-400 text-xs leading-relaxed">Paleta neutra, patronage impecable y calidad superior en cada detalle.</p>
+            </div>
+            <div class="glass-card p-6 rounded-xl border border-bordercolor/60">
+                <span class="text-xs font-mono text-neutral-500 block mb-2">03 // COMUNIDAD</span>
+                <h3 class="text-white font-medium text-base mb-1">Presencia Real</h3>
+                <p class="text-neutral-400 text-xs leading-relaxed">Valoramos la opinión de nuestros clientes. Tu experiencia importa.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-8 px-6 border-t border-bordercolor/40 text-center text-xs text-neutral-500 flex flex-col sm:flex-row items-center justify-between max-w-5xl mx-auto gap-4">
+        <p>&copy; 2026 Piceno Indumentaria. Todos los derechos reservados.</p>
+        <div class="flex items-center gap-6">
+            <a href="https://www.instagram.com/piceno.indumentaria/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram</a>
+            <a href="https://g.page/r/CUSDYN2YraKeEBM/review" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Google Reviews</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript for minor interactive flourishes -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Log confirmation for developers/preview
+            console.log('Piceno Indumentaria Landing Page loaded successfully.');
+        });
+    </script>
+</body>
+</html>
